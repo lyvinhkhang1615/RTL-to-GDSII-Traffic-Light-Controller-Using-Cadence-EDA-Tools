@@ -1,0 +1,421 @@
+VERSION 5.6 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+SITE Pad
+  CLASS PAD ;
+  SYMMETRY X Y R90 ;
+  SIZE 0.010 BY 250 ;
+END Pad
+
+SITE Corner
+  CLASS PAD ;
+  SYMMETRY X Y R90 ;
+  SIZE 250 BY 250 ;
+END Corner
+
+MACRO PADIO
+  CLASS PAD ;
+  ORIGIN 0 0 ;
+  FOREIGN PADIO 0 0 ;
+  SIZE 40 BY 250 ;
+  SYMMETRY X Y R90 ;
+  SITE Pad ;
+  PIN PAD
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 18.94 0 26.06 0.5 ;
+      LAYER Metal3 ;
+        RECT 18.94 0 26.06 0.5 ;
+    END
+  END PAD
+  PIN OEN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal1 ;
+        RECT 26.995 249 28.995 250 ;
+      LAYER Metal2 ;
+        RECT 26.995 249 28.995 250 ;
+      LAYER Metal3 ;
+        RECT 26.995 249 28.995 250 ;
+      LAYER Metal4 ;
+        RECT 26.995 249 28.995 250 ;
+      LAYER Metal5 ;
+        RECT 26.995 249 28.995 250 ;
+      LAYER Metal6 ;
+        RECT 26.995 249 28.995 250 ;
+      LAYER Metal7 ;
+        RECT 26.995 249 28.995 250 ;
+      LAYER Metal8 ;
+        RECT 26.995 249 28.995 250 ;
+      LAYER Metal9 ;
+        RECT 26.995 249 28.995 250 ;
+    END
+  END OEN
+  PIN IN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal1 ;
+        RECT 13.69 249 15.69 250 ;
+      LAYER Metal2 ;
+        RECT 13.69 249 15.69 250 ;
+      LAYER Metal3 ;
+        RECT 13.69 249 15.69 250 ;
+      LAYER Metal4 ;
+        RECT 13.69 249 15.69 250 ;
+      LAYER Metal5 ;
+        RECT 13.69 249 15.69 250 ;
+      LAYER Metal6 ;
+        RECT 13.69 249 15.69 250 ;
+      LAYER Metal7 ;
+        RECT 13.69 249 15.69 250 ;
+      LAYER Metal8 ;
+        RECT 13.69 249 15.69 250 ;
+      LAYER Metal9 ;
+        RECT 13.69 249 15.69 250 ;
+    END
+  END IN
+  PIN OUT
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal1 ;
+        RECT 8.175 249 10.175 250 ;
+      LAYER Metal2 ;
+        RECT 8.175 249 10.175 250 ;
+      LAYER Metal3 ;
+        RECT 8.175 249 10.175 250 ;
+      LAYER Metal4 ;
+        RECT 8.175 249 10.175 250 ;
+      LAYER Metal5 ;
+        RECT 8.175 249 10.175 250 ;
+      LAYER Metal6 ;
+        RECT 8.175 249 10.175 250 ;
+      LAYER Metal7 ;
+        RECT 8.175 249 10.175 250 ;
+      LAYER Metal8 ;
+        RECT 8.175 249 10.175 250 ;
+      LAYER Metal9 ;
+        RECT 8.175 249 10.175 250 ;
+    END
+  END OUT
+  OBS
+    LAYER Metal1 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal2 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal3 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal4 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal5 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal6 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal7 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal8 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal9 ;
+      RECT 0 0 40 250 ;
+  END
+END PADIO
+
+MACRO PADO
+  CLASS PAD ;
+  ORIGIN 0 0 ;
+  FOREIGN PADO 0 0 ;
+  SIZE 40 BY 250 ;
+  SYMMETRY X Y R90 ;
+  SITE Pad ;
+  PIN PAD
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 18.94 0 26.06 0.5 ;
+      LAYER Metal3 ;
+        RECT 18.94 0 26.06 0.5 ;
+    END
+  END PAD
+  PIN IN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal1 ;
+        RECT 13.69 249 15.69 250 ;
+      LAYER Metal2 ;
+        RECT 13.69 249 15.69 250 ;
+      LAYER Metal3 ;
+        RECT 13.69 249 15.69 250 ;
+      LAYER Metal4 ;
+        RECT 13.69 249 15.69 250 ;
+      LAYER Metal5 ;
+        RECT 13.69 249 15.69 250 ;
+      LAYER Metal6 ;
+        RECT 13.69 249 15.69 250 ;
+      LAYER Metal7 ;
+        RECT 13.69 249 15.69 250 ;
+      LAYER Metal8 ;
+        RECT 13.69 249 15.69 250 ;
+      LAYER Metal9 ;
+        RECT 13.69 249 15.69 250 ;
+    END
+  END IN
+  OBS
+    LAYER Metal1 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal2 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal3 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal4 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal5 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal6 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal7 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal8 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal9 ;
+      RECT 0 0 40 250 ;
+  END
+END PADO
+
+MACRO PADCORNER
+  CLASS ENDCAP BOTTOMLEFT ;
+  ORIGIN 0 0 ;
+  FOREIGN PADCORNER 0 0 ;
+  SIZE 250 BY 250 ;
+  SYMMETRY X Y R90 ;
+  SITE Corner ;
+  OBS
+    LAYER Metal1 ;
+      RECT 0 0 250 250 ;
+    LAYER Metal2 ;
+      RECT 0 0 250 250 ;
+    LAYER Metal3 ;
+      RECT 0 0 250 250 ;
+    LAYER Metal4 ;
+      RECT 0 0 250 250 ;
+    LAYER Metal5 ;
+      RECT 0 0 250 250 ;
+    LAYER Metal6 ;
+      RECT 0 0 250 250 ;
+    LAYER Metal7 ;
+      RECT 0 0 250 250 ;
+    LAYER Metal8 ;
+      RECT 0 0 250 250 ;
+    LAYER Metal9 ;
+      RECT 0 0 250 250 ;
+  END
+END PADCORNER
+
+MACRO PADI
+  CLASS PAD ;
+  ORIGIN 0 0 ;
+  FOREIGN PADI 0 0 ;
+  SIZE 40 BY 250 ;
+  SYMMETRY X Y R90 ;
+  SITE Pad ;
+  PIN PAD
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 18.94 0 26.06 0.5 ;
+      LAYER Metal3 ;
+        RECT 18.94 0 26.06 0.5 ;
+    END
+  END PAD
+  PIN OUT
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal1 ;
+        RECT 17.175 249 19.175 250 ;
+      LAYER Metal2 ;
+        RECT 17.175 249 19.175 250 ;
+      LAYER Metal3 ;
+        RECT 17.175 249 19.175 250 ;
+      LAYER Metal4 ;
+        RECT 17.175 249 19.175 250 ;
+      LAYER Metal5 ;
+        RECT 17.175 249 19.175 250 ;
+      LAYER Metal6 ;
+        RECT 17.175 249 19.175 250 ;
+      LAYER Metal7 ;
+        RECT 17.175 249 19.175 250 ;
+      LAYER Metal8 ;
+        RECT 17.175 249 19.175 250 ;
+      LAYER Metal9 ;
+        RECT 17.175 249 19.175 250 ;
+    END
+  END OUT
+  OBS
+    LAYER Metal1 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal2 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal3 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal4 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal5 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal6 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal7 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal8 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal9 ;
+      RECT 0 0 40 250 ;
+  END
+END PADI
+
+MACRO PADVDD1
+  CLASS PAD POWER ;
+  ORIGIN 0 0 ;
+  FOREIGN PADVDD1 0 0 ;
+  SIZE 40 BY 250 ;
+  SYMMETRY X Y R90 ;
+  SITE Pad ;
+  PIN VDD
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      CLASS CORE ;
+      LAYER Metal2 ;
+        RECT 9.18 243.19 35.82 250 ;
+      LAYER Metal3 ;
+        RECT 9.18 243.19 35.82 250 ;
+    END
+  END VDD
+  OBS
+    LAYER Metal1 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal2 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal3 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal4 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal5 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal6 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal7 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal8 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal9 ;
+      RECT 0 0 40 250 ;
+  END
+END PADVDD1
+
+MACRO PADVDD2
+  CLASS PAD POWER ;
+  ORIGIN 0 0 ;
+  FOREIGN PADVDD2 0 0 ;
+  SIZE 40 BY 250 ;
+  SYMMETRY X Y R90 ;
+  SITE Pad ;
+  OBS
+    LAYER Metal1 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal2 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal3 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal4 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal5 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal6 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal7 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal8 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal9 ;
+      RECT 0 0 40 250 ;
+  END
+END PADVDD2
+
+MACRO PADVSS1
+  CLASS PAD POWER ;
+  ORIGIN 0 0 ;
+  FOREIGN PADVSS1 0 0 ;
+  SIZE 40 BY 250 ;
+  SYMMETRY X Y R90 ;
+  SITE Pad ;
+  PIN VSS
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      CLASS CORE ;
+      LAYER Metal2 ;
+        RECT 9.18 243.19 35.82 250 ;
+      LAYER Metal3 ;
+        RECT 9.18 243.19 35.82 250 ;
+    END
+  END VSS
+  OBS
+    LAYER Metal1 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal2 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal3 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal4 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal5 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal6 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal7 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal8 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal9 ;
+      RECT 0 0 40 250 ;
+  END
+END PADVSS1
+
+MACRO PADVSS2
+  CLASS PAD POWER ;
+  ORIGIN 0 0 ;
+  FOREIGN PADVSS2 0 0 ;
+  SIZE 40 BY 250 ;
+  SYMMETRY X Y R90 ;
+  SITE Pad ;
+  OBS
+    LAYER Metal1 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal2 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal3 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal4 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal5 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal6 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal7 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal8 ;
+      RECT 0 0 40 250 ;
+    LAYER Metal9 ;
+      RECT 0 0 40 250 ;
+  END
+END PADVSS2
+
+END LIBRARY
