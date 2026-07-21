@@ -1,0 +1,23 @@
+Static_Timing_analysis 
+# 1. Fix OCV error trước
+setAnalysisMode -analysisType bcwc
+
+# 2. Chạy STA
+timeDesign -postRoute -reportOnly
+
+# 3. Reports đúng lệnh
+report_timing > sta_setup.rpt
+report_timing -early > sta_hold.rpt
+
+# Xem setup timing
+cat sta_setup.rpt
+
+# Xem hold timing  
+cat sta_hold.rpt
+
+rcOut -spef traffic_light.spef
+
+xuất file sau khi pnr dùng lệnh này vào consel encounter:
+saveNetlist traffic_light_routed_netlist.v
+write_sdc traffic_light_routed.sdc
+
