@@ -1,0 +1,59 @@
+# ####################################################################
+
+#  Created by Encounter(R) RTL Compiler v12.10-s012_1 on Sat Jul 11 08:19:53 +0600 2026
+
+# ####################################################################
+
+set sdc_version 1.7
+
+set_units -capacitance 1000.0fF
+set_units -time 1000.0ps
+
+# Set the current design
+current_design top_module
+
+create_clock -name "clk_50mhz" -add -period 20.0 -waveform {0.0 10.0} [get_ports clk_50mhz]
+set_clock_gating_check -setup 0.0 
+
+# --- Input delay: tách max (setup) và min (hold) ---
+set_input_delay -clock [get_clocks clk_50mhz] -max 1.2 [get_ports rst]
+set_input_delay -clock [get_clocks clk_50mhz] -min 0.5 [get_ports rst]
+
+set_input_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports rst]
+set_input_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports clk_50mhz]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg2_dv[0]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg2_dv[1]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg2_dv[2]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg2_dv[3]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg2_dv[4]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg2_dv[5]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg2_dv[6]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg2_ch[0]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg2_ch[1]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg2_ch[2]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg2_ch[3]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg2_ch[4]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg2_ch[5]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg2_ch[6]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg1_dv[0]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg1_dv[1]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg1_dv[2]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg1_dv[3]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg1_dv[4]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg1_dv[5]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg1_dv[6]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg1_ch[0]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg1_ch[1]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg1_ch[2]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg1_ch[3]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg1_ch[4]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg1_ch[5]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {seg1_ch[6]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {LED_2[0]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {LED_2[1]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {LED_2[2]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {LED_1[0]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {LED_1[1]}]
+set_output_delay -clock [get_clocks clk_50mhz] -add_delay 1.0 [get_ports {LED_1[2]}]
+set_wire_load_mode "enclosed"
+set_dont_use [get_lib_cells gpdk045bc/HOLDX1]

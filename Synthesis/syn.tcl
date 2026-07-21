@@ -1,0 +1,81 @@
+#=========================================================
+# RTL Compiler Synthesis Script
+#=========================================================
+
+#=========================================================
+# Search paths
+#=========================================================
+set_attribute lef_library /home/buet/cadence/EDI/share/FoundationFlows/EXAMPLES/PROTO/LIBS/GPDK/LIBS/GPDK045/gsclib045.lef
+set_attribute hdl_search_path ../RTL
+set_attribute lib_search_path /home/buet/cadence/EDI/share/FoundationFlows/EXAMPLES/PROTO/LIBS/GPDK/LIBS/GPDK045/timing
+
+#=========================================================
+# Libraries
+#=========================================================
+set_attribute library {slow.lib fast.lib}
+set_attribute information_level 6
+set_attribute hdl_error_on_blackbox true
+
+#=========================================================
+# HDL Files
+#=========================================================
+set myFiles [list \
+    top_module.v \
+    clk_1hz.v \
+    fsm.v \
+    display_2digit.v \
+]
+
+#=========================================================
+# Design Information
+#=========================================================
+set basename top_module
+set runname slow
+
+
+
+#=========================================================
+# Read HDL
+#=========================================================
+read_hdl -v2001 ${myFiles}
+
+#=========================================================
+# Elaborate
+#=========================================================
+elaborate ${basename}
+
+#=========================================================
+# Timing Constraints
+#=========================================================
+
+read_sdc /home/buet/Documents/mode_test/Synthesis/constraints/constraints_before_PnR.sdc
+
+#=========================================================
+# Design Checks
+#=========================================================
+check_design -unresolved
+report timing -lint
+
+#=========================================================
+# Synthesis
+#=========================================================
+synthesize -to_mapped -effort medium
+
+#=========================================================
+# Reports
+#=========================================================
+report timing > ${basename}_${runname}_timing.rep
+report gates  > ${basename}_${runname}_cell.rep
+report power  > ${basename}_${runname}_power.rep
+report area   > ${basename}_${runname}_area.rep
+
+#=========================================================
+# Outputs
+#=========================================================
+write_hdl -mapped > ${basename}_${runname}.v
+write_sdc         > ${basename}_${runname}.sdc
+
+#=========================================================
+# GUI
+#=========================================================
+gui_show

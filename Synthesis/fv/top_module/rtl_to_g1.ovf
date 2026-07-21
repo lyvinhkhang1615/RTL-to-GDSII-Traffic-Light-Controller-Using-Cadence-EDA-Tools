@@ -1,0 +1,209 @@
+#Copyright notice: Copyright 1997-2010 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+
+ovf_setup -ungroup_separator { _ }
+
+ovf_instance_module_name -module top_module \
+{ { u_clk clk_1hz clk_1hz } }
+ovf_instance_module_name -module top_module \
+{ { u_fsm fsm fsm } }
+ovf_transform \
+-module { fsm } \
+-type { tree } \
+-internal_type { 106 } \
+-internal_index { 4 } \
+-input { 9 timer } \
+-output { 9 N49 } \
+-output { 9 N48 } \
+-from { \
+   { 9 add_36_32 : UADD { { timer } { 'b000000001 } } } \
+   { 9 add_43_32 : UADD { { timer } { 'b000000001 } } } \
+   { N49 = { add_36_32.1 } } \
+   { N48 = { add_43_32.1 } } } \
+-to { \
+   { 9 add_36_32 : UADD { { timer } { 'b000000001 } } } \
+   { N49 = { add_36_32.1 } } \
+   { N48 = { add_36_32.1 } } }
+
+ovf_transform \
+-module { fsm } \
+-type { tree } \
+-internal_type { 106 } \
+-internal_index { 5 } \
+-input { 9 timer } \
+-output { 9 N49 } \
+-output { 9 N47 } \
+-from { \
+   { 9 add_36_32 : UADD { { timer } { 'b000000001 } } } \
+   { 9 add_50_32 : UADD { { timer } { 'b000000001 } } } \
+   { N49 = { add_36_32.1 } } \
+   { N47 = { add_50_32.1 } } } \
+-to { \
+   { 9 add_36_32 : UADD { { timer } { 'b000000001 } } } \
+   { N49 = { add_36_32.1 } } \
+   { N47 = { add_36_32.1 } } }
+
+ovf_transform \
+-module { fsm } \
+-type { tree } \
+-internal_type { 106 } \
+-internal_index { 6 } \
+-input { 9 timer } \
+-output { 9 N49 } \
+-output { 9 N46 } \
+-from { \
+   { 9 add_36_32 : UADD { { timer } { 'b000000001 } } } \
+   { 9 add_57_32 : UADD { { timer } { 'b000000001 } } } \
+   { N49 = { add_36_32.1 } } \
+   { N46 = { add_57_32.1 } } } \
+-to { \
+   { 9 add_36_32 : UADD { { timer } { 'b000000001 } } } \
+   { N49 = { add_36_32.1 } } \
+   { N46 = { add_36_32.1 } } }
+
+ovf_transform \
+-module { fsm } \
+-type { tree } \
+-internal_type { 106 } \
+-internal_index { 7 } \
+-input { 9 timer } \
+-output { 9 N53 } \
+-output { 9 N52 } \
+-from { \
+   { 9 sub_80_24 : USUB { { 'b000000101 } { timer } } } \
+   { 9 sub_81_24 : USUB { { 'b000000101 } { timer } } } \
+   { N53 = { sub_80_24.1 } } \
+   { N52 = { sub_81_24.1 } } } \
+-to { \
+   { 9 sub_80_24 : USUB { { 'b000000101 } { timer } } } \
+   { N53 = { sub_80_24.1 } } \
+   { N52 = { sub_80_24.1 } } }
+
+ovf_transform \
+-module { fsm } \
+-type { tree } \
+-internal_type { 106 } \
+-internal_index { 8 } \
+-input { 9 timer } \
+-output { 9 N53 } \
+-output { 9 N51 } \
+-from { \
+   { 9 sub_80_24 : USUB { { 'b000000101 } { timer } } } \
+   { 9 sub_92_24 : USUB { { 'b000000101 } { timer } } } \
+   { N53 = { sub_80_24.1 } } \
+   { N51 = { sub_92_24.1 } } } \
+-to { \
+   { 9 sub_80_24 : USUB { { 'b000000101 } { timer } } } \
+   { N53 = { sub_80_24.1 } } \
+   { N51 = { sub_80_24.1 } } }
+
+ovf_transform \
+-module { fsm } \
+-type { tree } \
+-internal_type { 106 } \
+-internal_index { 9 } \
+-input { 9 timer } \
+-output { 9 N53 } \
+-output { 9 N50 } \
+-from { \
+   { 9 sub_80_24 : USUB { { 'b000000101 } { timer } } } \
+   { 9 sub_93_24 : USUB { { 'b000000101 } { timer } } } \
+   { N53 = { sub_80_24.1 } } \
+   { N50 = { sub_93_24.1 } } } \
+-to { \
+   { 9 sub_80_24 : USUB { { 'b000000101 } { timer } } } \
+   { N53 = { sub_80_24.1 } } \
+   { N50 = { sub_80_24.1 } } }
+
+ovf_transform \
+-module { fsm } \
+-type { tree } \
+-internal_type { 106 } \
+-internal_index { 10 } \
+-input { 9 timer } \
+-output { 9 N55 } \
+-output { 9 N54 } \
+-from { \
+   { 9 sub_74_23 : USUB { { 'b000101000 } { timer } } } \
+   { 9 sub_87_23 : USUB { { 'b000101000 } { timer } } } \
+   { N55 = { sub_74_23.1 } } \
+   { N54 = { sub_87_23.1 } } } \
+-to { \
+   { 9 sub_74_23 : USUB { { 'b000101000 } { timer } } } \
+   { N55 = { sub_74_23.1 } } \
+   { N54 = { sub_74_23.1 } } }
+
+ovf_transform \
+-module { fsm } \
+-type { tree } \
+-internal_type { 106 } \
+-internal_index { 11 } \
+-input { 9 timer } \
+-output { 9 N57 } \
+-output { 9 N56 } \
+-from { \
+   { 9 sub_75_32 : USUB { { 'b000101101 } { timer } } } \
+   { 9 sub_86_32 : USUB { { 'b000101101 } { timer } } } \
+   { N57 = { sub_75_32.1 } } \
+   { N56 = { sub_86_32.1 } } } \
+-to { \
+   { 9 sub_75_32 : USUB { { 'b000101101 } { timer } } } \
+   { N57 = { sub_75_32.1 } } \
+   { N56 = { sub_75_32.1 } } }
+
+ovf_transform \
+-module { sep2 } \
+-type { tree } \
+-internal_type { 202 } \
+-internal_index { 35 } \
+-input { 4 sub_46_49.A } \
+-input { 4 sub_46_49.B } \
+-output { 4 O1 } \
+-output { 4 O2 } \
+-from { \
+   { 4 sub_46_49 : USUB { { sub_46_49.A } { sub_46_49.B } } } \
+   { 4 sub_54_49 : USUB { { sub_46_49.A } { sub_46_49.B } } } \
+   { O1 = { sub_46_49.1 } } \
+   { O2 = { sub_54_49.1 } } } \
+-to { \
+   { 4 sub_46_49 : USUB { { sub_46_49.A } { sub_46_49.B } } } \
+   { O1 = { sub_46_49.1 } } \
+   { O2 = { sub_46_49.1 } } }
+
+ovf_transform \
+-module { clk_1hz } \
+-type { tree } \
+-internal_type { 206 } \
+-internal_index { 36 } \
+-input { 26 add_27_24.A } \
+-output { 26 O1 } \
+-from { \
+   { 26 add_27_24 : UADD { { add_27_24.A } { 'b1 ZERO 26 } } } \
+   { O1 = { add_27_24.1 } } } \
+-to { \
+   { 26 inc_add_27_24_1 : UINC { { add_27_24.A } { 'b1 ZERO 26 } } } \
+   { O1 = { inc_add_27_24_1.1 } } }
+
+ovf_transform \
+-module { fsm } \
+-type { tree } \
+-internal_type { 206 } \
+-internal_index { 37 } \
+-input { 9 add_36_32.A } \
+-output { 9 O1 } \
+-from { \
+   { 9 add_36_32 : UADD { { add_36_32.A } { 'b1 ZERO 9 } } } \
+   { O1 = { add_36_32.1 } } } \
+-to { \
+   { 9 inc_add_36_32_2 : UINC { { add_36_32.A } { 'b1 ZERO 9 } } } \
+   { O1 = { inc_add_36_32_2.1 } } }
+
+ovf_uniquify \
+-module { display_2digit_cross } \
+{ { u_B display_2digit display_2digit_14 } } 
+ovf_uniquify \
+-module { display_2digit_14 } \
+{ { u_dv seg7dec seg7dec_31 } } 
+ovf_uniquify \
+-module { display_2digit } \
+{ { u_dv seg7dec seg7dec_31 } } 

@@ -1,0 +1,957 @@
+Checking out license 'RTL_Compiler_Ultra'... (0 seconds elapsed)
+Reading GUI preferences file '/home/buet/.cadence/rc.gui'.
+Finished loading tool scripts (4 seconds elapsed)
+
+                       Cadence Encounter(R) RTL Compiler
+               Version v12.10-s012_1 (32-bit), built Jan 26 2013
+
+
+Copyright notice: Copyright 1997-2012 Cadence Design Systems, Inc. All rights 
+reserved worldwide. 
+
+WARNING: This version of RC is 4924 days old.
+         Visit downloads.cadence.com for the latest release of RC.
+
+
+================================================================================
+                  Welcome to Cadence Encounter(R) RTL Compiler
+
+Notice: Upcoming end of support for Linux 32-bit.
+Support for Linux 32-bit will be discontinued starting with the RC 13.1 release.
+To ensure continued access to the forthcoming releases, RC 13.1 and up, you are
+advised to start the transitioning to Linux 64-bit.
+
+Here is a quick introduction on how to access our product information.  
+If you do not want this message to appear in the future, create an 
+initialization file (an empty file will do) in your home directory 
+called '~/.cadence/.synth_init'.
+
+  To access the product documentation in HTML and PDF, type 'cdnshelp'
+    at the system prompt. 
+  For a list of available commands, type 'help'. 
+  To view a man page for a command, type 'man <commandName>'.
+  To view a man page for an error message, type 'man <messageID>'.
+  For a list of all possible object types, type 'get_attribute -help'.
+  For a list of all available attributes by object type, type
+    'get_attribute * <object_type> -help'.
+  For a list of all attributes for every object type, type
+    'get_attribute * * -help'
+  To list only writable attributes, substitute 'get_attribute' with
+    'set_attribute'.
+  To get a template script to run RTL Compiler, use the 'write_template'
+    command.
+  To get a template script to run Conformal based on the current RTL
+    Compiler session, use the 'write_do_lec' command.
+  
+  Obsolete attributes in the current tool version.
+  To learn more, type 'get_attribute -help <attribute> <object>'.
+
+            object  attribute
+            ------  ---------
+       cpf_command  synthesize_complex_expressions
+    cpf_command_id  current_set_instance_macro
+    cpf_command_id  current_set_instance_module
+    cpf_command_id  done_in_apply_cpf
+    cpf_command_id  done_in_write_cpf
+    cpf_command_id  macro_definition_command
+    cpf_command_id  rc_command
+            design  dp_perform_rewriting_operations
+            design  lp_map_to_srpg_cells
+            design  lp_optimize_dynamic_power_first
+            design  lp_srpg_pg_driver
+            design  ovf_current_verification_directory
+          instance  black_box
+          instance  dft_inherited_dont_scan
+          instance  lp_map_to_srpg_cells
+          instance  lp_map_to_srpg_type
+          instance  lp_srpg_pg_driver
+           libcell  black_box
+           libcell  location
+               net  logic0_driven
+               net  logic1_driven
+              root  auto_ungroup_min_effort
+              root  degenerate_complex_seqs
+              root  disable_power_mode
+              root  dp_area_mode
+              root  dp_perform_csa_operations
+              root  dp_perform_rewriting_operations
+              root  dp_perform_sharing_operations
+              root  dp_perform_speculation_operations
+              root  enable_parallel_iopt
+              root  exact_match_seqs_async_controls
+              root  hdl_flatten_array
+              root  hdl_old_reg_naming
+              root  hdl_reg_naming_style_scalar
+              root  hdl_reg_naming_style_vector
+              root  hdl_trim_target_index
+              root  ignore_unknown_embedded_commands
+              root  lbr_async_clr_pre_seqs_interchangable
+              root  ovf_mode
+              root  ovf_verification_directory
+              root  ple_parameter_source_priority
+              root  pqos_virtual_buffer
+              root  retime_preserve_state_points
+              root  wlec_env_var
+              root  wlec_flat_r2n
+              root  wlec_no_exit
+              root  wlec_old_lp_ec_flow
+              root  wlec_save_ssion
+              root  wlec_sim_lib
+              root  wlec_sim_plus_lib
+              root  wlec_skip_iso_check_hier_compare
+              root  wlec_skip_lvl_check_hier_compare
+              root  wlec_verbose
+         subdesign  allow_csa_subdesign
+         subdesign  allow_sharing_subdesign
+         subdesign  allow_speculation_subdesign
+         subdesign  auto_ungroup_ok
+         subdesign  dp_perform_rewriting_operations
+
+Send us feedback at rc_feedback@cadence.com.
+================================================================================
+
+Sourcing './syn.tcl' (Tue Jul 21 18:46:12 +0600 2026)...
+
+  According to lef_library, there are total 9 routing layers [ V(4) / H(5) ]
+
+  Setting attribute of root '/': 'lef_library' = /home/buet/cadence/EDI/share/FoundationFlows/EXAMPLES/PROTO/LIBS/GPDK/LIBS/GPDK045/gsclib045.lef
+  Setting attribute of root '/': 'hdl_search_path' = ../RTL
+  Setting attribute of root '/': 'lib_search_path' = /home/buet/cadence/EDI/share/FoundationFlows/EXAMPLES/PROTO/LIBS/GPDK/LIBS/GPDK045/timing
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.080000, 125.000000) in library 'slow.lib'.
+        : The nominal operating condition represents either the nominal PVT values if specified in the library source, or the default PVT values (1.0, 1.0, 1.0).
+
+  Message Summary for Library slow.lib:
+  *************************************
+  Found 'statetable' group in cell. [LBR-83]: 16
+  Created nominal operating condition. [LBR-412]: 1
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.320000, 0.000000) in library 'fast.lib'.
+
+  Message Summary for Library fast.lib:
+  *************************************
+  Found 'statetable' group in cell. [LBR-83]: 16
+  Created nominal operating condition. [LBR-412]: 1
+ 
+Warning : Libraries have inconsistent nominal operating conditions. [LBR-38]
+        : The libraries are 'gpdk045bc' and 'gpdk045wc'.
+        : This is a common source of delay calculation confusion and is strongly discouraged.
+Info    : Found library cells that are unusable for mapping. [LBR-415]
+        : Library: 'slow.lib', Total cells: 477, Usable cells: 452, Cells unusable for mapping: 25.
+	List of unusable cells: 'HOLDX1 TLATNCAX12 TLATNCAX2 TLATNCAX20 TLATNCAX6 TLATNSRX4 TLATNSRXL TLATNTSCAX16 TLATNTSCAX4 TLATNTSCAX8 ... and others.'
+        : The number of unusable cells that is listed depends on the setting of the 'information_level' root attribute. If set to a value less than 6, the list is limited to 10 unusable cells. If set to a value equal to or higher than 6, all unusable cells are listed.
+Info    : Found library cells that are unusable for mapping. [LBR-415]
+        : Library: 'fast.lib', Total cells: 477, Usable cells: 452, Cells unusable for mapping: 25.
+	List of unusable cells: 'HOLDX1 TLATNCAX12 TLATNCAX2 TLATNCAX20 TLATNCAX6 TLATNSRX4 TLATNSRXL TLATNTSCAX16 TLATNTSCAX4 TLATNTSCAX8 ... and others.'
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/ADDFHX2 and gpdk045wc/ADDFHX2).  Deleting the latter.
+        : Library cell names must be unique.  Any duplicates will be deleted.  Only the first (as determined by the order of libraries) will be retained.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/ADDFHX4 and gpdk045wc/ADDFHX4).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/ADDFHXL and gpdk045wc/ADDFHXL).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/ADDFXL and gpdk045wc/ADDFXL).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/ADDHX2 and gpdk045wc/ADDHX2).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/ADDHXL and gpdk045wc/ADDHXL).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND2X4 and gpdk045wc/AND2X4).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND2X6 and gpdk045wc/AND2X6).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND2XL and gpdk045wc/AND2XL).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND3X1 and gpdk045wc/AND3X1).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND3X8 and gpdk045wc/AND3X8).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND3XL and gpdk045wc/AND3XL).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND4X1 and gpdk045wc/AND4X1).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND4X4 and gpdk045wc/AND4X4).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND4X8 and gpdk045wc/AND4X8).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AND4XL and gpdk045wc/AND4XL).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AO21X1 and gpdk045wc/AO21X1).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AO21X2 and gpdk045wc/AO21X2).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AO21XL and gpdk045wc/AO21XL).  Deleting the latter.
+Warning : Multiply-defined library cell. [LBR-22]
+        : Library-cell name collision (gpdk045bc/AO22X1 and gpdk045wc/AO22X1).  Deleting the latter.
+Info    : Found library cells that are unusable for mapping. [LBR-415]
+        : Library: 'slow.lib', Total cells: 477, Usable cells: 452, Cells unusable for mapping: 25.
+	List of unusable cells: 'HOLDX1 TLATNCAX12 TLATNCAX2 TLATNCAX20 TLATNCAX6 TLATNSRX4 TLATNSRXL TLATNTSCAX16 TLATNTSCAX4 TLATNTSCAX8 ... and others.'
+  Libraries have 324 usable logic and 126 usable sequential lib-cells.
+Info    : Found library cells that are unusable for mapping. [LBR-415]
+        : Library: 'slow.lib', Total cells: 477, Usable cells: 452, Cells unusable for mapping: 25.
+	List of unusable cells: 'HOLDX1 TLATNCAX12 TLATNCAX2 TLATNCAX20 TLATNCAX6 TLATNSRX4 TLATNSRXL TLATNTSCAX16 TLATNTSCAX4 TLATNTSCAX8 ... and others.'
+Info    : Found library cells that are unusable for mapping. [LBR-415]
+        : Library: 'physical_cells', Total cells: 10, Usable cells: 0, Cells unusable for mapping: 10.
+	List of unusable cells: 'DFFNSRX4 FILL1 FILL2 FILL64 FILL8 FILL16 ANTENNA FILL4 DFFSX2 FILL32 .'
+  Setting attribute of root '/': 'library' = slow.lib fast.lib
+  Setting attribute of root '/': 'information_level' = 6
+  Setting attribute of root '/': 'hdl_error_on_blackbox' = true
+            Reading Verilog file '../RTL/top_module.v'
+            Reading Verilog file '../RTL/clk_1hz.v'
+            Reading Verilog file '../RTL/fsm.v'
+            Reading Verilog file '../RTL/display_2digit.v'
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'top_module' from file '../RTL/top_module.v'.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'clk_1hz' from file '../RTL/clk_1hz.v'.
+Warning : Using default parameter value for module elaboration. [CDFG-818]
+        : Elaborating block 'clk_1hz' with default parameters value.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'fsm' from file '../RTL/fsm.v'.
+Warning : Using default parameter value for module elaboration. [CDFG-818]
+        : Elaborating block 'fsm' with default parameters value.
+Warning : Unreachable statements for case item. [CDFG-472]
+        : Case item 'default' in module 'fsm' in file '../RTL/fsm.v' on line 70.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'display_2digit_cross' from file '../RTL/display_2digit.v'.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'display_2digit' from file '../RTL/display_2digit.v'.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'sep2' from file '../RTL/display_2digit.v'.
+        No redundancy found in case branches
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'seg7dec' from file '../RTL/display_2digit.v'.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'top_module'.
+Statistics for commands executed by read_sdc:
+ "all_outputs"             - successful      3 , failed      0 (runtime  0.00)
+ "create_clock"            - successful      1 , failed      0 (runtime  0.00)
+ "current_design"          - successful      2 , failed      0 (runtime  0.00)
+ "get_clocks"              - successful      1 , failed      0 (runtime  0.00)
+ "get_ports"               - successful      2 , failed      0 (runtime  0.00)
+ "set_clock_uncertainty"   - successful      1 , failed      0 (runtime  0.00)
+ "set_false_path"          - successful      1 , failed      0 (runtime  0.00)
+ "set_load"                - successful      1 , failed      0 (runtime  0.00)
+ "set_max_fanout"          - successful      1 , failed      0 (runtime  0.00)
+ "set_max_transition"      - successful      1 , failed      0 (runtime  0.00)
+ "set_output_delay"        - successful      2 , failed      0 (runtime  0.00)
+Total runtime 0
+  Checking the design.
+
+ 	 Check Design Report
+	 -------------------- 
+
+  Unresolved References & Empty Modules
+  ------------------------------------- 
+No unresolved references in design 'top_module'
+
+No empty modules in design 'top_module'
+
+  Done Checking the design.
+        Tracing clock networks.
+        Levelizing the circuit.
+        Computing net loads.
+        Computing delays.
+        Computing arrivals and requireds.
+============================================================
+  Generated by:           Encounter(R) RTL Compiler v12.10-s012_1
+  Generated on:           Jul 21 2026  06:46:15 pm
+  Module:                 top_module
+  Technology libraries:   gpdk045bc 
+                          gpdk045wc 
+                          physical_cells 
+  Operating conditions:   slow 
+  Interconnect mode:      global
+  Area mode:              physical library
+============================================================
+
+-------------------------------------------------------------------------------
+Sequential clock pins without clock waveform
+
+The following sequential clock pins have no clock waveform driving them.  No    
+timing constraints will be derived for paths leading to or from these pins.     
+
+/designs/top_module/instances_hier/u_fsm/instances_seq/state_reg[0]/pins_in/clk
+/designs/top_module/instances_hier/u_fsm/instances_seq/state_reg[1]/pins_in/clk
+/designs/top_module/instances_hier/u_fsm/instances_seq/timer_reg[0]/pins_in/clk
+  ... 8 other warnings in this category.
+ Use the -verbose option for more details.
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Timing exceptions with no effect
+
+The following timing exceptions are not currently affecting timing in the       
+design.  Either no paths in the design satisfy the exception's path             
+specification, or all paths that satisfy the path specification also satisfy an 
+exception with a higher priority.  You can improve runtime and memory usage by  
+removing these exceptions if they are not truly needed.  To see if there is a   
+path in the design that satisfies the path specification for an exception, or   
+to see what other exception is overriding an exception because of priority, use 
+the command:                                                                    
+  report timing -paths [eval [get_attribute paths <exception>]]
+
+/designs/top_module/timing/exceptions/path_disables/constraints_before_P_line_8
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Inputs without clocked external delays
+
+The following primary inputs have no clocked external delays.  As a result the  
+timing paths leading from the ports have no timing constraints derived from     
+clock waveforms.  The'external_delay' command is used to create new external    
+delays.                                                                         
+
+/designs/top_module/ports_in/rst
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Inputs without external driver/transition
+
+The following primary inputs have no external driver or input transition set.   
+As a result the transition on the ports will be assumed as zero. The            
+'external_driver' attribute is used to add and external driver or the           
+'fixed_slew' attribute to add an external transition.                           
+
+/designs/top_module/ports_in/rst
+-------------------------------------------------------------------------------
+
+
+Lint summary
+ Unconnected/logic driven clocks                                  0
+ Sequential data pins driven by a clock signal                    0
+ Sequential clock pins without clock waveform                    11
+ Sequential clock pins with multiple clock waveforms              0
+ Generated clocks without clock waveform                          0
+ Generated clocks with incompatible options                       0
+ Generated clocks with multi-master clock                         0
+ Paths constrained with different clocks                          0
+ Loop-breaking cells for combinational feedback                   0
+ Nets with multiple drivers                                       0
+ Timing exceptions with no effect                                 1
+ Suspicious multi_cycle exceptions                                0
+ Pins/ports with conflicting case constants                       0
+ Inputs without clocked external delays                           1
+ Outputs without clocked external delays                          0
+ Inputs without external driver/transition                        1
+ Outputs without external load                                    0
+ Exceptions with invalid timing start-/endpoints                  0
+
+                                                  Total:         14
+
+Current PLE settings:
+
+Aspect ratio        : 1.00
+Shrink factor       : 1.00
+Scale of res/length : 1.00
+Scale of cap/length : 1.00
+Net derating factor : 1.00
+Thermal factor      : 1.00
+Via Resistance      : 4.42 ohm (from lef_library)
+Site size           : 1.91 um (from lef [tech+cell])
+
+                                   Capacitance  
+  Layer                             / Length         Data source:
+Name        Direction Utilization  (pF/micron)       lef_library
+------------------------------------------------
+Metal1          H         1.00        0.000412  
+Metal2          V         1.00        0.000414  
+Metal3          H         1.00        0.000414  
+Metal4          V         1.00        0.000414  
+Metal5          H         1.00        0.000414  
+Metal6          V         1.00        0.000414  
+Metal7          H         1.00        0.000414  
+Metal8          V         1.00        0.000414  
+Metal9          H         1.00        0.000414  
+
+                                    Resistance   
+  Layer                              / Length         Data source:
+Name        Direction Utilization  (ohm/micron)       lef_library
+-------------------------------------------------
+Metal1          H         1.00         3.000000  
+Metal2          V         1.00         2.428571  
+Metal3          H         1.00         2.428571  
+Metal4          V         1.00         2.428571  
+Metal5          H         1.00         2.428571  
+Metal6          V         1.00         2.428571  
+Metal7          H         1.00         2.428571  
+Metal8          V         1.00         2.428571  
+Metal9          H         1.00         0.285714  
+
+                                        Area     
+  Layer                               / Length        Data source:
+Name        Direction Utilization     (micron)        lef_library
+-------------------------------------------------
+Metal1          H         1.00         0.060000  
+Metal2          V         1.00         0.070000  
+Metal3          H         1.00         0.070000  
+Metal4          V         1.00         0.070000  
+Metal5          H         1.00         0.070000  
+Metal6          V         1.00         0.070000  
+Metal7          H         1.00         0.070000  
+Metal8          V         1.00         0.070000  
+Metal9          H         1.00         0.070000  
+
+Info    : Deleting instances not driving any primary outputs. [GLO-32]
+        : Deleting 5 hierarchical instances. 
+Following instances are deleted as they do not drive any primary output:
+'u_clk/mux_clk_1hz_17_9', 'u_clk/mux_cnt_17_9', 'u_clk/mux_cnt_22_17', 
+'u_fsm/mux_state_27_8', 'u_fsm/mux_timer_27_8'.
+        : Optimizations such as constant propagation or redundancy removal could change the connections so an instance does not drive any primary outputs anymore. To see the list of deleted instances, set the 'information_level' attribute to 2 or above.
+Info    : Combinational hierarchical blocks with identical inputs have been merged. [GLO-40]
+        : Instances 'sub_46_49' and 'sub_54_49' in 'sep2' have been merged.
+        : This optimization usually reduces design area. To prevent merging of combinational hierarchical blocks, set the 'merge_combinational_hier_instances' root attribute to 'false' or the 'merge_combinational_hier_instance' instance attribute to 'false'.
+        Trying carrysave optimization (configuration 1 of 1) on module 'clk_1hz'...
+                  Allow CSA over Muxes:      Yes
+                  Allow CSA over Inverter:   Yes
+                  Allow Complex CSA:         No
+                  Allow CSA over Truncation: No
+Info    : Done carrysave optimization. [RTLOPT-20]
+        : There is 1 CSA group in module 'clk_1hz'... Accepted.
+        Trying carrysave optimization (configuration 1 of 1) on module 'fsm'...
+                  Allow CSA over Muxes:      Yes
+                  Allow CSA over Inverter:   Yes
+                  Allow Complex CSA:         No
+                  Allow CSA over Truncation: No
+Info    : Done carrysave optimization. [RTLOPT-20]
+        : There is 1 CSA group in module 'fsm'... Accepted.
+      Removing temporary intermediate hierarchies under top_module
+Mapping top_module to gates.
+      Mapping 'top_module'...
+        Preparing the circuit
+          Pruning unused logic
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'u_fsm/timer_reg[6]'.
+        : This optimization was enabled by the root attribute 'optimize_constant_0_flops'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'u_fsm/timer_reg[7]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'u_fsm/timer_reg[8]'.
+Info    : Deleting instances not driving any primary outputs. [GLO-32]
+        : Deleting 3 sequential instances. 
+Following instances are deleted as they do not drive any primary output:
+'u_fsm/timer_reg[6]', 'u_fsm/timer_reg[7]', 'u_fsm/timer_reg[8]'.
+          Analyzing hierarchical boundaries
+          Propagating constants
+        Done preparing the circuit
+Info    : Automatically enabling super-threading. [ST-121]
+        : Host 'cadence' has 4 processors available.
+        : RC is entering super-threading mode because it is running on a multi-processor machine.  Two super-thread servers will be running on 'localhost' and no super-thread licenses will be checked out.  This is enabled by the root attribute 'auto_super_thread'.
+Info    : Attempting to launch a super-threading server. [ST-120]
+        : Attempting to Launch server 1 of 2.
+        : RC is entering super-threading mode and is launching a CPU server process.  This is enabled by the root attribute 'super_thread_servers' or 'auto_super_thread'.
+            : The server is process '11878' in this host.
+Info    : Attempting to launch a super-threading server. [ST-120]
+        : Attempting to Launch server 2 of 2.
+            : The server is process '11880' in this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server is process '11878' in this host.
+        : RC is entering super-threading mode and has established a connection with a CPU server process.  This is enabled by the root attributes 'super_thread_servers' or 'auto_super_thread'.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server is process '11880' in this host.
+          Structuring (delay-based) top_module...
+          Done structuring (delay-based) top_module
+          Structuring (delay-based) logic partition in fsm...
+            Starting partial collapsing (xors only) cb_oseq
+            Finished partial collapsing.
+            Performing redundancy-removal...
+          Done structuring (delay-based) logic partition in fsm
+        Mapping logic partition in fsm...
+          Structuring (delay-based) increment_unsigned...
+            Starting partial collapsing (xors only) increment_unsigned
+            Finished partial collapsing.
+            Performing redundancy-removal...
+          Done structuring (delay-based) increment_unsigned
+        Mapping component increment_unsigned...
+          Structuring (delay-based) logic partition in fsm...
+            Starting partial collapsing (xors only) cb_seq
+            Finished partial collapsing.
+            Performing redundancy-removal...
+          Done structuring (delay-based) logic partition in fsm
+        Mapping logic partition in fsm...
+          Structuring (delay-based) logic partition in clk_1hz...
+            Performing redundancy-removal...
+          Done structuring (delay-based) logic partition in clk_1hz
+        Mapping logic partition in clk_1hz...
+          Structuring (delay-based) sep2...
+            Performing redundancy-removal...
+          Done structuring (delay-based) sep2
+        Mapping component sep2...
+          Structuring (delay-based) seg7dec...
+            Performing redundancy-removal...
+          Done structuring (delay-based) seg7dec
+        Mapping component seg7dec...
+          Structuring (delay-based) seg7dec_31...
+            Performing redundancy-removal...
+          Done structuring (delay-based) seg7dec_31
+        Mapping component seg7dec_31...
+ 
+Global mapping target info
+==========================
+Cost Group 'clk_50mhz' target slack:   591 ps
+Target path end-point (Pin: u_clk/cnt_reg[25]/d)
+
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'top_module'.
+        : Use 'report timing -lint' for more information.
+       Pin                    Type          Fanout Load Arrival   
+                                                   (fF)   (ps)    
+------------------------------------------------------------------
+(clock clk_50mhz)   <<<  launch                               0 R 
+u_clk
+  mux_ctl_0xi
+    cnt_reg[0]/clk                                                
+    cnt_reg[0]/q    (u)  unmapped_d_flop         5 25.0           
+  mux_ctl_0xi/inc_add_27_24_1_A[0] 
+  inc_add_27_24_1/A[0] 
+    g306/in_1                                                     
+    g306/z          (u)  unmapped_nand2          3 15.0           
+    g302/in_1                                                     
+    g302/z          (u)  unmapped_complex2       3 15.0           
+    g190/in_0                                                     
+    g190/z          (u)  unmapped_complex2       3 15.0           
+    g298/in_0                                                     
+    g298/z          (u)  unmapped_complex2       3 15.0           
+    g294/in_0                                                     
+    g294/z          (u)  unmapped_complex2       3 15.0           
+    g290/in_0                                                     
+    g290/z          (u)  unmapped_complex2       3 15.0           
+    g286/in_0                                                     
+    g286/z          (u)  unmapped_complex2       3 15.0           
+    g279/in_1                                                     
+    g279/z          (u)  unmapped_complex2       3 15.0           
+    g197/in_0                                                     
+    g197/z          (u)  unmapped_complex2       3 15.0           
+    g174/in_0                                                     
+    g174/z          (u)  unmapped_complex2       3 15.0           
+    g211/in_0                                                     
+    g211/z          (u)  unmapped_complex2       3 15.0           
+    g177/in_0                                                     
+    g177/z          (u)  unmapped_complex2       3 15.0           
+    g199/in_0                                                     
+    g199/z          (u)  unmapped_complex2       3 15.0           
+    g175/in_0                                                     
+    g175/z          (u)  unmapped_complex2       3 15.0           
+    g187/in_0                                                     
+    g187/z          (u)  unmapped_complex2       3 15.0           
+    g254/in_0                                                     
+    g254/z          (u)  unmapped_complex2       3 15.0           
+    g253/in_0                                                     
+    g253/z          (u)  unmapped_complex2       3 15.0           
+    g249/in_0                                                     
+    g249/z          (u)  unmapped_complex2       3 15.0           
+    g245/in_0                                                     
+    g245/z          (u)  unmapped_complex2       3 15.0           
+    g238/in_0                                                     
+    g238/z          (u)  unmapped_complex2       3 15.0           
+    g234/in_0                                                     
+    g234/z          (u)  unmapped_complex2       3 15.0           
+    g230/in_0                                                     
+    g230/z          (u)  unmapped_complex2       3 15.0           
+    g229/in_0                                                     
+    g229/z          (u)  unmapped_complex2       3 15.0           
+    g222/in_0                                                     
+    g222/z          (u)  unmapped_complex2       2 10.0           
+    g220/in_1                                                     
+    g220/z          (u)  unmapped_or2            1  5.0           
+    g221/in_1                                                     
+    g221/z          (u)  unmapped_nand2          1  5.0           
+  inc_add_27_24_1/Z[25] 
+  mux_ctl_0xi/inc_add_27_24_1_Z[24] 
+    g510/data0                                                    
+    g510/z          (u)  unmapped_bmux3          1  5.0           
+    cnt_reg[25]/d   <<<  unmapped_d_flop                          
+    cnt_reg[25]/clk      setup                                    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(clock clk_50mhz)        capture                          20000 R 
+                         uncertainty                              
+------------------------------------------------------------------
+Cost Group   : 'clk_50mhz' (path_group 'clk_50mhz')
+Start-point  : u_clk/mux_ctl_0xi/cnt_reg[0]/clk
+End-point    : u_clk/mux_ctl_0xi/cnt_reg[25]/d
+
+(u) : Net has unmapped pin(s).
+
+The global mapper estimates a slack for this path of 11663ps.
+ 
+          Restructuring (delay-based) seg7dec_31...
+          Done restructuring (delay-based) seg7dec_31
+        Optimizing component seg7dec_31...
+          Restructuring (delay-based) seg7dec...
+          Done restructuring (delay-based) seg7dec
+        Optimizing component seg7dec...
+          Restructuring (delay-based) sep2...
+          Done restructuring (delay-based) sep2
+        Optimizing component sep2...
+          Restructuring (delay-based) logic partition in clk_1hz...
+          Done restructuring (delay-based) logic partition in clk_1hz
+        Optimizing logic partition in clk_1hz...
+          Restructuring (delay-based) logic partition in fsm...
+          Done restructuring (delay-based) logic partition in fsm
+        Optimizing logic partition in fsm...
+          Restructuring (delay-based) logic partition in fsm...
+          Done restructuring (delay-based) logic partition in fsm
+        Optimizing logic partition in fsm...
+          Restructuring (delay-based) increment_unsigned...
+          Done restructuring (delay-based) increment_unsigned
+        Optimizing component increment_unsigned...
+        Early Area Reclamation for increment_unsigned 'very_fast' (slack=10468, area=269)...
+          Restructuring (delay-based) increment_unsigned_78...
+          Done restructuring (delay-based) increment_unsigned_78
+        Optimizing component increment_unsigned_78...
+ 
+Global mapping timing result
+============================
+        Tracing clock networks.
+        Levelizing the circuit.
+        Computing net loads.
+        Computing delays.
+        Computing arrivals and requireds.
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'top_module'.
+       Pin                Type       Fanout Load Slew Delay Arrival   
+                                            (fF) (ps)  (ps)   (ps)    
+----------------------------------------------------------------------
+(clock clk_50mhz)       launch                                    0 R 
+u_clk
+  mux_ctl_0xi
+    cnt_reg[1]/CK                                   0             0 R 
+    cnt_reg[1]/Q        DFFRHQX2          2  7.8   90  +298     298 R 
+  mux_ctl_0xi/inc_add_27_24_1_A[1] 
+  inc_add_27_24_1/A[1] 
+    g199/B                                               +0     298   
+    g199/CO             ADDHXL            1  5.3  158  +183     482 R 
+    g198/B                                               +0     482   
+    g198/CO             ADDHXL            1  5.3  159  +206     688 R 
+    g197/B                                               +0     688   
+    g197/CO             ADDHXL            1  5.3  159  +207     895 R 
+    g196/B                                               +0     895   
+    g196/CO             ADDHXL            1  5.3  159  +207    1102 R 
+    g195/B                                               +0    1102   
+    g195/CO             ADDHXL            1  5.3  159  +207    1309 R 
+    g194/B                                               +0    1310   
+    g194/CO             ADDHXL            1  5.3  159  +207    1516 R 
+    g193/B                                               +0    1517   
+    g193/CO             ADDHXL            1  5.3  159  +207    1724 R 
+    g192/B                                               +0    1724   
+    g192/CO             ADDHXL            1  5.3  159  +207    1931 R 
+    g191/B                                               +0    1931   
+    g191/CO             ADDHXL            1  5.3  159  +207    2138 R 
+    g190/B                                               +0    2138   
+    g190/CO             ADDHXL            1  5.3  159  +207    2345 R 
+    g189/B                                               +0    2345   
+    g189/CO             ADDHXL            1  5.3  159  +207    2552 R 
+    g188/B                                               +0    2552   
+    g188/CO             ADDHXL            1  5.3  159  +207    2759 R 
+    g187/B                                               +0    2759   
+    g187/CO             ADDHXL            1  5.3  159  +207    2966 R 
+    g186/B                                               +0    2966   
+    g186/CO             ADDHXL            1  5.3  159  +207    3173 R 
+    g185/B                                               +0    3173   
+    g185/CO             ADDHXL            1  5.3  159  +207    3380 R 
+    g184/B                                               +0    3380   
+    g184/CO             ADDHXL            1  5.3  159  +207    3588 R 
+    g183/B                                               +0    3588   
+    g183/CO             ADDHXL            1  5.3  159  +207    3795 R 
+    g182/B                                               +0    3795   
+    g182/CO             ADDHXL            1  5.3  159  +207    4002 R 
+    g181/B                                               +0    4002   
+    g181/CO             ADDHXL            1  5.3  159  +207    4209 R 
+    g180/B                                               +0    4209   
+    g180/CO             ADDHXL            1  5.3  159  +207    4416 R 
+    g179/B                                               +0    4416   
+    g179/CO             ADDHXL            1  5.3  159  +207    4623 R 
+    g178/B                                               +0    4623   
+    g178/CO             ADDHXL            1  5.3  159  +207    4830 R 
+    g177/B                                               +0    4830   
+    g177/CO             ADDHXL            1  5.3  159  +207    5037 R 
+    g176/B                                               +0    5037   
+    g176/CO             ADDHXL            1  5.0  151  +203    5240 R 
+    g175/B                                               +0    5241   
+    g175/Y              CLKXOR2X1         1  4.4   94  +196    5437 R 
+  inc_add_27_24_1/Z[25] 
+  mux_ctl_0xi/inc_add_27_24_1_Z[24] 
+    g1067/B                                              +0    5437   
+    g1067/Y             AND2X1            1  4.6   90  +158    5595 R 
+    cnt_reg[25]/D  <<<  DFFRHQX2                         +0    5595   
+    cnt_reg[25]/CK      setup                       0  +123    5718 R 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(clock clk_50mhz)       capture                               20000 R 
+                        uncertainty                    -200   19800 R 
+----------------------------------------------------------------------
+Cost Group   : 'clk_50mhz' (path_group 'clk_50mhz')
+Timing slack :   14082ps 
+Start-point  : u_clk/mux_ctl_0xi/cnt_reg[1]/CK
+End-point    : u_clk/mux_ctl_0xi/cnt_reg[25]/D
+
+ 
+ 
+Global mapping status
+=====================
+                                   Group   
+                                  Tot Wrst 
+                           Total  Weighted 
+Operation                   Area   Slacks  
+-------------------------------------------------------------------------------
+ global_map                 1545        0 
+ 
+Global incremental target info
+==============================
+Cost Group 'clk_50mhz' target slack:   394 ps
+Target path end-point (Pin: u_clk/cnt_reg[25]/D (DFFRHQX2/D))
+
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'top_module'.
+       Pin                Type       Fanout Load Arrival   
+                                            (fF)   (ps)    
+-----------------------------------------------------------
+(clock clk_50mhz)  <<<  launch                         0 R 
+u_clk
+  mux_ctl_0xi
+    cnt_reg[1]/CK                                          
+    cnt_reg[1]/Q        DFFRHQX2          2  7.8           
+  mux_ctl_0xi/inc_add_27_24_1_A[1] 
+  inc_add_27_24_1/A[1] 
+    g199/B                                                 
+    g199/CO             ADDHXL            1  5.3           
+    g198/B                                                 
+    g198/CO             ADDHXL            1  5.3           
+    g197/B                                                 
+    g197/CO             ADDHXL            1  5.3           
+    g196/B                                                 
+    g196/CO             ADDHXL            1  5.3           
+    g195/B                                                 
+    g195/CO             ADDHXL            1  5.3           
+    g194/B                                                 
+    g194/CO             ADDHXL            1  5.3           
+    g193/B                                                 
+    g193/CO             ADDHXL            1  5.3           
+    g192/B                                                 
+    g192/CO             ADDHXL            1  5.3           
+    g191/B                                                 
+    g191/CO             ADDHXL            1  5.3           
+    g190/B                                                 
+    g190/CO             ADDHXL            1  5.3           
+    g189/B                                                 
+    g189/CO             ADDHXL            1  5.3           
+    g188/B                                                 
+    g188/CO             ADDHXL            1  5.3           
+    g187/B                                                 
+    g187/CO             ADDHXL            1  5.3           
+    g186/B                                                 
+    g186/CO             ADDHXL            1  5.3           
+    g185/B                                                 
+    g185/CO             ADDHXL            1  5.3           
+    g184/B                                                 
+    g184/CO             ADDHXL            1  5.3           
+    g183/B                                                 
+    g183/CO             ADDHXL            1  5.3           
+    g182/B                                                 
+    g182/CO             ADDHXL            1  5.3           
+    g181/B                                                 
+    g181/CO             ADDHXL            1  5.3           
+    g180/B                                                 
+    g180/CO             ADDHXL            1  5.3           
+    g179/B                                                 
+    g179/CO             ADDHXL            1  5.3           
+    g178/B                                                 
+    g178/CO             ADDHXL            1  5.3           
+    g177/B                                                 
+    g177/CO             ADDHXL            1  5.3           
+    g176/B                                                 
+    g176/CO             ADDHXL            1  5.0           
+    g175/B                                                 
+    g175/Y              CLKXOR2X1         1  4.4           
+  inc_add_27_24_1/Z[25] 
+  mux_ctl_0xi/inc_add_27_24_1_Z[24] 
+    g1067/B                                                
+    g1067/Y             AND2X1            1  4.6           
+    cnt_reg[25]/D  <<<  DFFRHQX2                           
+    cnt_reg[25]/CK      setup                              
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+(clock clk_50mhz)       capture                    20000 R 
+                        uncertainty                        
+-----------------------------------------------------------
+Cost Group   : 'clk_50mhz' (path_group 'clk_50mhz')
+Start-point  : u_clk/mux_ctl_0xi/cnt_reg[1]/CK
+End-point    : u_clk/mux_ctl_0xi/cnt_reg[25]/D
+
+The global mapper estimates a slack for this path of 9859ps.
+ 
+ 
+Global incremental timing result
+================================
+        Tracing clock networks.
+        Levelizing the circuit.
+        Computing net loads.
+        Computing delays.
+        Computing arrivals and requireds.
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'top_module'.
+       Pin                Type       Fanout Load Slew Delay Arrival   
+                                            (fF) (ps)  (ps)   (ps)    
+----------------------------------------------------------------------
+(clock clk_50mhz)       launch                                    0 R 
+u_clk
+  mux_ctl_0xi
+    cnt_reg[0]/CK                                   0             0 R 
+    cnt_reg[0]/Q        DFFRHQX2          3 10.3  108  +307     307 R 
+  mux_ctl_0xi/inc_add_27_24_1_A[0] 
+  inc_add_27_24_1/A[0] 
+    g199/A                                               +0     308   
+    g199/CO             ADDHX2            1  5.3   73  +181     489 R 
+    g198/B                                               +0     489   
+    g198/CO             ADDHXL            1  5.3  158  +177     666 R 
+    g197/B                                               +0     666   
+    g197/CO             ADDHXL            1  5.3  159  +207     873 R 
+    g196/B                                               +0     873   
+    g196/CO             ADDHXL            1  5.3  159  +207    1080 R 
+    g195/B                                               +0    1080   
+    g195/CO             ADDHXL            1  5.3  159  +207    1287 R 
+    g194/B                                               +0    1287   
+    g194/CO             ADDHXL            1  5.3  159  +207    1494 R 
+    g193/B                                               +0    1494   
+    g193/CO             ADDHXL            1  5.3  159  +207    1701 R 
+    g192/B                                               +0    1701   
+    g192/CO             ADDHXL            1  5.3  159  +207    1908 R 
+    g191/B                                               +0    1908   
+    g191/CO             ADDHXL            1  5.3  159  +207    2115 R 
+    g190/B                                               +0    2115   
+    g190/CO             ADDHXL            1  5.3  159  +207    2322 R 
+    g189/B                                               +0    2322   
+    g189/CO             ADDHXL            1  5.3  159  +207    2529 R 
+    g188/B                                               +0    2530   
+    g188/CO             ADDHXL            1  5.3  159  +207    2736 R 
+    g187/B                                               +0    2737   
+    g187/CO             ADDHXL            1  5.3  159  +207    2944 R 
+    g186/B                                               +0    2944   
+    g186/CO             ADDHXL            1  5.3  159  +207    3151 R 
+    g185/B                                               +0    3151   
+    g185/CO             ADDHXL            1  5.3  159  +207    3358 R 
+    g184/B                                               +0    3358   
+    g184/CO             ADDHXL            1  5.3  159  +207    3565 R 
+    g183/B                                               +0    3565   
+    g183/CO             ADDHXL            1  5.3  159  +207    3772 R 
+    g182/B                                               +0    3772   
+    g182/CO             ADDHXL            1  5.3  159  +207    3979 R 
+    g181/B                                               +0    3979   
+    g181/CO             ADDHXL            1  5.3  159  +207    4186 R 
+    g180/B                                               +0    4186   
+    g180/CO             ADDHXL            1  5.3  159  +207    4393 R 
+    g179/B                                               +0    4393   
+    g179/CO             ADDHXL            1  5.3  159  +207    4600 R 
+    g178/B                                               +0    4600   
+    g178/CO             ADDHXL            1  5.3  159  +207    4808 R 
+    g177/B                                               +0    4808   
+    g177/CO             ADDHXL            1  5.3  159  +207    5015 R 
+    g176/B                                               +0    5015   
+    g176/CO             ADDHXL            1  5.0  151  +203    5218 R 
+    g175/B                                               +0    5218   
+    g175/Y              CLKXOR2X1         1  4.4   94  +196    5414 R 
+  inc_add_27_24_1/Z[25] 
+  mux_ctl_0xi/inc_add_27_24_1_Z[24] 
+    g1067/B                                              +0    5415   
+    g1067/Y             AND2X1            1  4.6   90  +158    5572 R 
+    cnt_reg[25]/D  <<<  DFFRHQX2                         +0    5572   
+    cnt_reg[25]/CK      setup                       0  +124    5696 R 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(clock clk_50mhz)       capture                               20000 R 
+                        uncertainty                    -200   19800 R 
+----------------------------------------------------------------------
+Cost Group   : 'clk_50mhz' (path_group 'clk_50mhz')
+Timing slack :   14104ps 
+Start-point  : u_clk/mux_ctl_0xi/cnt_reg[0]/CK
+End-point    : u_clk/mux_ctl_0xi/cnt_reg[25]/D
+
+ 
+ 
+Global incremental optimization status
+======================================
+                                   Group   
+                                  Tot Wrst 
+                           Total  Weighted 
+Operation                   Area   Slacks  
+-------------------------------------------------------------------------------
+ global_incr                1645        0 
+
+Scan mapping status report
+==========================
+    Scan mapping: converting flip-flops that pass TDRC.
+    Scan mapping: bypassed.  You have to either 1) set attribute 'dft_scan_map_mode' to 'tdrc_pass' and run 'check_dft_rules' or 2) set attribute 'dft_scan_map_mode' to 'force_all'.
+
+    Scan mapping bypassed because no TDRC data is available: either command 'check_dft_rules' has not been run or TDRC data has been subsequently invalidated.
+Info    : A super-threading server has been shut down normally. [ST-112]
+        : The server was process '11880' in this host.
+        : A super-threaded optimization is complete and a CPU server was successfully shut down.
+Info    : A super-threading server has been shut down normally. [ST-112]
+        : The server was process '11878' in this host.
+        ------------------------------------------------------------
+                            Super-Thread Summary
+          time in super-thread mode               : 2.96 sec
+          foreground process active time          : 2.96 sec
+          background processes total active time  : 0.00 sec
+          approximate speedup                     : 1.00X
+           * reported times are wall-clock (elapsed time),
+             not CPU time
+        ------------------------------------------------------------
+                            Stats from servers
+          servers : localhost localhost
+          memory_usage (Mb) : 89.54 89.54
+        ------------------------------------------------------------
+Info    : 'Conformal LEC12.1-p100' or later builds is recommended for verification. [WDO-600]
+        : The use of 'Conformal LEC12.1-p100' or later builds is recommended to get better verification results.
+Generating a dofile for design 'top_module' in file 'fv/top_module/rtl_to_g1.do' ...
+Info    : 'Conformal LEC12.1-p100' or later builds is recommended for verification. [WDO-600]
+Generating a dofile for design 'top_module' in file 'fv/top_module/rtl_to_g1_withoutovf.do' ...
+ 
+Incremental optimization status
+===============================
+                                   Group   
+                                  Tot Wrst - - - - DRC Totals - - - -
+                           Total  Weighted     Max       Max     Max  
+Operation                   Area   Slacks     Trans      Cap   Fanout 
+-------------------------------------------------------------------------------
+ init_iopt                  1645        0        50        0        0
+ 
+Incremental optimization status
+===============================
+                                   Group   
+                                  Tot Wrst - - - - DRC Totals - - - -
+                           Total  Weighted     Max       Max     Max  
+Operation                   Area   Slacks     Trans      Cap   Fanout 
+-------------------------------------------------------------------------------
+ init_delay                 1644        0        50        0        0
+ init_drc                   1644        0        50        0        0
+ init_area                  1644        0        50        0        0
+ rem_buf                    1587        0        50        0        0
+ rem_inv                    1587        0        50        0        0
+ merge_bi                   1586        0        50        0        0
+ rem_inv_qb                 1573        0        50        0        0
+ gate_comp                  1573        0        50        0        0
+ area_down                  1562        0        50        0        0
+ 
+Incremental optimization status
+===============================
+                                   Group   
+                                  Tot Wrst - - - - DRC Totals - - - -
+                           Total  Weighted     Max       Max     Max  
+Operation                   Area   Slacks     Trans      Cap   Fanout 
+-------------------------------------------------------------------------------
+ init_delay                 1562        0        50        0        0
+ init_drc                   1562        0        50        0        0
+ init_area                  1562        0        50        0        0
+ area_down                  1561        0        50        0        0
+
+  Done mapping top_module
+  Synthesis succeeded.
+        Tracing clock networks.
+        Levelizing the circuit.
+        Computing net loads.
+        Computing delays.
+        Computing arrivals and requireds.
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'top_module'.
+Finished SDC export (command execution time mm:ss (real) = 00:00).
+rc:/> Normal exit.
