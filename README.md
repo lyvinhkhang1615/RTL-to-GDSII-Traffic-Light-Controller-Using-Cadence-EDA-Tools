@@ -160,18 +160,16 @@ The Physical Design implementation includes:
 
 ---
 
-## Author
-
+## The author team consists of 5 members, including:
 **Ly Vinh Khang**
-
+**Ly Hoang Khang**
+**Nguyễn Phan Thái Sơn**
+**Nguyễn Nhật Hào**
+**Nguyễn Hữu Bình**
 Fourth-year Electronics and Telecommunications Engineering Student
-
-Ho Chi Minh City University of Technology and Education (HCMUTE)
-
+Ho Chi Minh City University of Technology and Engineering (HCMUTE)
 Interested in **ASIC Physical Design**, **Digital IC Design**, and **Semiconductor Design**.
-
 ---
 
 ## License
-
 This project is intended for educational and research purposes.
