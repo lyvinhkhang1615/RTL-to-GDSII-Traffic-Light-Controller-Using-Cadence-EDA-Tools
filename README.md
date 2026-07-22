@@ -13,7 +13,6 @@ The project covers the entire digital IC design process, including RTL design, l
 - RTL design using Verilog HDL
 - Functional simulation
 - Logic synthesis with Cadence RTL Compiler
-- Design for Testability (DFT) analysis
 - Multi-Mode Multi-Corner (MMMC) timing setup
 - Floorplanning and power planning
 - Standard cell placement
