@@ -1,0 +1,511 @@
+catch { setAnalysisMode -analysisType onChipVariation }
+catch { setAnalysisMode -checkType setup }
+catch { setAnalysisMode -clkSrcPath true }
+catch { setAnalysisMode -clockPropagation sdcControl }
+catch { setAnalysisMode -cppr both }
+catch { setAnalysisMode -skew true }
+catch { setAnalysisMode -virtualIPO false }
+catch { setTrialRouteMode -fixAirConnect true }
+catch { setTrialRouteMode -handlePreroute true }
+catch { setTrialRouteMode -keepMarkedOptRoutes true }
+catch { setOptMode -deleteInst true }
+catch { setOptMode -drcMargin 0 }
+catch { setOptMode -effort high }
+catch { setOptMode -fixCap true }
+catch { setOptMode -fixDrc true }
+catch { setOptMode -fixFanoutLoad true }
+catch { setOptMode -fixTran true }
+catch { setOptMode -setupTargetSlack 0 }
+setExtractRCMode  -engine postRoute -total_c_th 5 -relative_c_th 0.03 -coupling_c_th 3 -minNetTermNrToBeInMem 50
+catch { setDelayCalMode -betaEngine sgs2 }
+catch { setDelayCalMode -enable_high_fanout false }
+catch { setDelayCalMode -engine aae }
+catch { setDelayCalMode -ignoreNetLoad false }
+catch { setDelayCalMode -SIAware true }
+catch { setDelayCalMode -siMode opt }
+catch { setCTSMode -moveGateLimit 25 }
+catch {setNanoRouteMode -quiet -drouteFixAntenna true}
+catch {setNanoRouteMode -quiet -drouteStartIteration 0}
+catch {setNanoRouteMode -quiet -routeExpPreserveConstraints true}
+catch {setNanoRouteMode -quiet -routeInsertAntennaDiode true}
+catch {setNanoRouteMode -quiet -routeSiEffort "high"}
+catch {setNanoRouteMode -quiet -routeWithEco true}
+catch {setNanoRouteMode -quiet -routeWithSiDriven true}
+catch {setNanoRouteMode -quiet -routeWithTimingDriven true}
+
+catch { setPlaceMode -congEffort auto }
+catch { setPlaceMode -congRepairForceTrialRoute false }
+catch { setPlaceMode -CPR true }
+catch { setPlaceMode -getLegalMultiThread false }
+catch { setPlaceMode -hardFence true }
+catch { setPlaceMode -ignoreScan true }
+catch { setPlaceMode -incrPlaceForOpt true }
+catch { setPlaceMode -relaxSoftBlockageMode 2 }
+catch { setPlaceMode -rplaceIncrNPRollBackLevel 3 }
+catch { setPlaceMode -timingDriven true }
+catch { setFillerMode -core {FILL1 FILL2 FILL4 FILL8 FILL16 FILL32 FILL64} }
+catch { setFillerMode -corePrefix top_module_FILL }
+setDontUse ACHCONX2 false
+setDontUse ADDFHX1 false
+setDontUse ADDFHX2 false
+setDontUse ADDFHX4 false
+setDontUse ADDFHXL false
+setDontUse ADDFX1 false
+setDontUse ADDFX2 false
+setDontUse ADDFX4 false
+setDontUse ADDFXL false
+setDontUse ADDHX1 false
+setDontUse ADDHX2 false
+setDontUse ADDHX4 false
+setDontUse ADDHXL false
+setDontUse AND2X1 false
+setDontUse AND2X2 false
+setDontUse AND2X4 false
+setDontUse AND2X6 false
+setDontUse AND2X8 false
+setDontUse AND2XL false
+setDontUse AND3X1 false
+setDontUse AND3X2 false
+setDontUse AND3X4 false
+setDontUse AND3X6 false
+setDontUse AND3X8 false
+setDontUse AND3XL false
+setDontUse AND4X1 false
+setDontUse AND4X2 false
+setDontUse AND4X4 false
+setDontUse AND4X6 false
+setDontUse AND4X8 false
+setDontUse AND4XL false
+setDontUse AO21X1 false
+setDontUse AO21X2 false
+setDontUse AO21X4 false
+setDontUse AO21XL false
+setDontUse AO22X1 false
+setDontUse AO22X2 false
+setDontUse AO22X4 false
+setDontUse AO22XL false
+setDontUse AOI211X1 false
+setDontUse AOI211X2 false
+setDontUse AOI211X4 false
+setDontUse AOI211XL false
+setDontUse AOI21X1 false
+setDontUse AOI21X2 false
+setDontUse AOI21X4 false
+setDontUse AOI21XL false
+setDontUse AOI221X1 false
+setDontUse AOI221X2 false
+setDontUse AOI221X4 false
+setDontUse AOI221XL false
+setDontUse AOI222X1 false
+setDontUse AOI222X2 false
+setDontUse AOI222X4 false
+setDontUse AOI222XL false
+setDontUse AOI22X1 false
+setDontUse AOI22X2 false
+setDontUse AOI22X4 false
+setDontUse AOI22XL false
+setDontUse AOI2BB1X1 false
+setDontUse AOI2BB1X2 false
+setDontUse AOI2BB1X4 false
+setDontUse AOI2BB1XL false
+setDontUse AOI2BB2X1 false
+setDontUse AOI2BB2X2 false
+setDontUse AOI2BB2X4 false
+setDontUse AOI2BB2XL false
+setDontUse AOI31X1 false
+setDontUse AOI31X2 false
+setDontUse AOI31X4 false
+setDontUse AOI31XL false
+setDontUse AOI32X1 false
+setDontUse AOI32X2 false
+setDontUse AOI32X4 false
+setDontUse AOI32XL false
+setDontUse AOI33X1 false
+setDontUse AOI33X2 false
+setDontUse AOI33X4 false
+setDontUse AOI33XL false
+setDontUse BMXIX2 false
+setDontUse BMXIX4 false
+setDontUse CLKAND2X12 false
+setDontUse CLKAND2X2 false
+setDontUse CLKAND2X3 false
+setDontUse CLKAND2X4 false
+setDontUse CLKAND2X6 false
+setDontUse CLKAND2X8 false
+setDontUse CLKINVX1 false
+setDontUse CLKINVX12 false
+setDontUse CLKINVX16 false
+setDontUse CLKINVX2 false
+setDontUse CLKINVX20 false
+setDontUse CLKINVX3 false
+setDontUse CLKINVX4 false
+setDontUse CLKINVX6 false
+setDontUse CLKINVX8 false
+setDontUse CLKMX2X12 false
+setDontUse CLKMX2X2 false
+setDontUse CLKMX2X3 false
+setDontUse CLKMX2X4 false
+setDontUse CLKMX2X6 false
+setDontUse CLKMX2X8 false
+setDontUse CLKXOR2X1 false
+setDontUse CLKXOR2X2 false
+setDontUse CLKXOR2X4 false
+setDontUse CLKXOR2X8 false
+setDontUse DFFHQX1 false
+setDontUse DFFHQX2 false
+setDontUse DFFHQX4 false
+setDontUse DFFHQX8 false
+setDontUse DFFNSRX1 false
+setDontUse DFFNSRX2 false
+setDontUse DFFNSRXL false
+setDontUse DFFQX1 false
+setDontUse DFFQX2 false
+setDontUse DFFQX4 false
+setDontUse DFFQXL false
+setDontUse DFFRHQX1 false
+setDontUse DFFRHQX2 false
+setDontUse DFFRHQX4 false
+setDontUse DFFRHQX8 false
+setDontUse DFFRX1 false
+setDontUse DFFRX2 false
+setDontUse DFFRX4 false
+setDontUse DFFRXL false
+setDontUse DFFSHQX1 false
+setDontUse DFFSHQX2 false
+setDontUse DFFSHQX4 false
+setDontUse DFFSHQX8 false
+setDontUse DFFSRHQX1 false
+setDontUse DFFSRHQX2 false
+setDontUse DFFSRHQX4 false
+setDontUse DFFSRHQX8 false
+setDontUse DFFSRX1 false
+setDontUse DFFSRX2 false
+setDontUse DFFSRX4 false
+setDontUse DFFSRXL false
+setDontUse DFFSX1 false
+setDontUse DFFSX4 false
+setDontUse DFFSXL false
+setDontUse DFFTRX1 false
+setDontUse DFFTRX2 false
+setDontUse DFFTRX4 false
+setDontUse DFFTRXL false
+setDontUse DFFX1 false
+setDontUse DFFX2 false
+setDontUse DFFX4 false
+setDontUse DFFXL false
+setDontUse DLY1X1 false
+setDontUse DLY1X4 false
+setDontUse DLY2X1 false
+setDontUse DLY2X4 false
+setDontUse DLY3X1 false
+setDontUse DLY3X4 false
+setDontUse DLY4X1 false
+setDontUse DLY4X4 false
+setDontUse EDFFHQX1 false
+setDontUse EDFFHQX2 false
+setDontUse EDFFHQX4 false
+setDontUse EDFFHQX8 false
+setDontUse EDFFTRX1 false
+setDontUse EDFFTRX2 false
+setDontUse EDFFTRX4 false
+setDontUse EDFFTRXL false
+setDontUse EDFFX1 false
+setDontUse EDFFX2 false
+setDontUse EDFFX4 false
+setDontUse EDFFXL false
+setDontUse INVX1 false
+setDontUse INVX12 false
+setDontUse INVX16 false
+setDontUse INVX2 false
+setDontUse INVX20 false
+setDontUse INVX3 false
+setDontUse INVX4 false
+setDontUse INVX6 false
+setDontUse INVX8 false
+setDontUse INVXL false
+setDontUse MDFFHQX1 false
+setDontUse MDFFHQX2 false
+setDontUse MDFFHQX4 false
+setDontUse MDFFHQX8 false
+setDontUse MX2X1 false
+setDontUse MX2X2 false
+setDontUse MX2X4 false
+setDontUse MX2X6 false
+setDontUse MX2X8 false
+setDontUse MX2XL false
+setDontUse MX3X1 false
+setDontUse MX3X2 false
+setDontUse MX3X4 false
+setDontUse MX3XL false
+setDontUse MX4X1 false
+setDontUse MX4X2 false
+setDontUse MX4X4 false
+setDontUse MX4XL false
+setDontUse MXI2X1 false
+setDontUse MXI2X2 false
+setDontUse MXI2X4 false
+setDontUse MXI2X6 false
+setDontUse MXI2X8 false
+setDontUse MXI2XL false
+setDontUse MXI3X1 false
+setDontUse MXI3X2 false
+setDontUse MXI3X4 false
+setDontUse MXI3XL false
+setDontUse MXI4X1 false
+setDontUse MXI4X2 false
+setDontUse MXI4X4 false
+setDontUse MXI4XL false
+setDontUse NAND2BX1 false
+setDontUse NAND2BX2 false
+setDontUse NAND2BX4 false
+setDontUse NAND2BXL false
+setDontUse NAND2X1 false
+setDontUse NAND2X2 false
+setDontUse NAND2X4 false
+setDontUse NAND2X6 false
+setDontUse NAND2X8 false
+setDontUse NAND2XL false
+setDontUse NAND3BX1 false
+setDontUse NAND3BX2 false
+setDontUse NAND3BX4 false
+setDontUse NAND3BXL false
+setDontUse NAND3X1 false
+setDontUse NAND3X2 false
+setDontUse NAND3X4 false
+setDontUse NAND3X6 false
+setDontUse NAND3X8 false
+setDontUse NAND3XL false
+setDontUse NAND4BBX1 false
+setDontUse NAND4BBX2 false
+setDontUse NAND4BBX4 false
+setDontUse NAND4BBXL false
+setDontUse NAND4BX1 false
+setDontUse NAND4BX2 false
+setDontUse NAND4BX4 false
+setDontUse NAND4BXL false
+setDontUse NAND4X1 false
+setDontUse NAND4X2 false
+setDontUse NAND4X4 false
+setDontUse NAND4X6 false
+setDontUse NAND4X8 false
+setDontUse NAND4XL false
+setDontUse NOR2BX1 false
+setDontUse NOR2BX2 false
+setDontUse NOR2BX4 false
+setDontUse NOR2BXL false
+setDontUse NOR2X1 false
+setDontUse NOR2X2 false
+setDontUse NOR2X4 false
+setDontUse NOR2X6 false
+setDontUse NOR2X8 false
+setDontUse NOR2XL false
+setDontUse NOR3BX1 false
+setDontUse NOR3BX2 false
+setDontUse NOR3BX4 false
+setDontUse NOR3BXL false
+setDontUse NOR3X1 false
+setDontUse NOR3X2 false
+setDontUse NOR3X4 false
+setDontUse NOR3X6 false
+setDontUse NOR3X8 false
+setDontUse NOR3XL false
+setDontUse NOR4BBX1 false
+setDontUse NOR4BBX2 false
+setDontUse NOR4BBX4 false
+setDontUse NOR4BBXL false
+setDontUse NOR4BX1 false
+setDontUse NOR4BX2 false
+setDontUse NOR4BX4 false
+setDontUse NOR4BXL false
+setDontUse NOR4X1 false
+setDontUse NOR4X2 false
+setDontUse NOR4X4 false
+setDontUse NOR4X6 false
+setDontUse NOR4X8 false
+setDontUse NOR4XL false
+setDontUse OA21X1 false
+setDontUse OA21X2 false
+setDontUse OA21X4 false
+setDontUse OA21XL false
+setDontUse OA22X1 false
+setDontUse OA22X2 false
+setDontUse OA22X4 false
+setDontUse OA22XL false
+setDontUse OAI211X1 false
+setDontUse OAI211X2 false
+setDontUse OAI211X4 false
+setDontUse OAI211XL false
+setDontUse OAI21X1 false
+setDontUse OAI21X2 false
+setDontUse OAI21X4 false
+setDontUse OAI21XL false
+setDontUse OAI221X1 false
+setDontUse OAI221X2 false
+setDontUse OAI221X4 false
+setDontUse OAI221XL false
+setDontUse OAI222X1 false
+setDontUse OAI222X2 false
+setDontUse OAI222X4 false
+setDontUse OAI222XL false
+setDontUse OAI22X1 false
+setDontUse OAI22X2 false
+setDontUse OAI22X4 false
+setDontUse OAI22XL false
+setDontUse OAI2BB1X1 false
+setDontUse OAI2BB1X2 false
+setDontUse OAI2BB1X4 false
+setDontUse OAI2BB1XL false
+setDontUse OAI2BB2X1 false
+setDontUse OAI2BB2X2 false
+setDontUse OAI2BB2X4 false
+setDontUse OAI2BB2XL false
+setDontUse OAI31X1 false
+setDontUse OAI31X2 false
+setDontUse OAI31X4 false
+setDontUse OAI31XL false
+setDontUse OAI32X1 false
+setDontUse OAI32X2 false
+setDontUse OAI32X4 false
+setDontUse OAI32XL false
+setDontUse OAI33X1 false
+setDontUse OAI33X2 false
+setDontUse OAI33X4 false
+setDontUse OAI33XL false
+setDontUse OR2X1 false
+setDontUse OR2X2 false
+setDontUse OR2X4 false
+setDontUse OR2X6 false
+setDontUse OR2X8 false
+setDontUse OR2XL false
+setDontUse OR3X1 false
+setDontUse OR3X2 false
+setDontUse OR3X4 false
+setDontUse OR3X6 false
+setDontUse OR3X8 false
+setDontUse OR3XL false
+setDontUse OR4X1 false
+setDontUse OR4X2 false
+setDontUse OR4X4 false
+setDontUse OR4X6 false
+setDontUse OR4X8 false
+setDontUse OR4XL false
+setDontUse SDFFHQX1 false
+setDontUse SDFFHQX2 false
+setDontUse SDFFHQX4 false
+setDontUse SDFFHQX8 false
+setDontUse SDFFNSRX1 false
+setDontUse SDFFNSRX2 false
+setDontUse SDFFNSRX4 false
+setDontUse SDFFNSRXL false
+setDontUse SDFFQX1 false
+setDontUse SDFFQX2 false
+setDontUse SDFFQX4 false
+setDontUse SDFFQXL false
+setDontUse SDFFRHQX1 false
+setDontUse SDFFRHQX2 false
+setDontUse SDFFRHQX4 false
+setDontUse SDFFRHQX8 false
+setDontUse SDFFRX1 false
+setDontUse SDFFRX2 false
+setDontUse SDFFRX4 false
+setDontUse SDFFRXL false
+setDontUse SDFFSHQX1 false
+setDontUse SDFFSHQX2 false
+setDontUse SDFFSHQX4 false
+setDontUse SDFFSHQX8 false
+setDontUse SDFFSRHQX1 false
+setDontUse SDFFSRHQX2 false
+setDontUse SDFFSRHQX4 false
+setDontUse SDFFSRHQX8 false
+setDontUse SDFFSRX1 false
+setDontUse SDFFSRX2 false
+setDontUse SDFFSRX4 false
+setDontUse SDFFSRXL false
+setDontUse SDFFSX1 false
+setDontUse SDFFSX2 false
+setDontUse SDFFSX4 false
+setDontUse SDFFSXL false
+setDontUse SDFFTRX1 false
+setDontUse SDFFTRX2 false
+setDontUse SDFFTRX4 false
+setDontUse SDFFTRXL false
+setDontUse SDFFX1 false
+setDontUse SDFFX2 false
+setDontUse SDFFX4 false
+setDontUse SDFFXL false
+setDontUse SEDFFHQX1 false
+setDontUse SEDFFHQX2 false
+setDontUse SEDFFHQX4 false
+setDontUse SEDFFHQX8 false
+setDontUse SEDFFTRX1 false
+setDontUse SEDFFTRX2 false
+setDontUse SEDFFTRX4 false
+setDontUse SEDFFTRXL false
+setDontUse SEDFFX1 false
+setDontUse SEDFFX2 false
+setDontUse SEDFFX4 false
+setDontUse SEDFFXL false
+setDontUse SMDFFHQX1 false
+setDontUse SMDFFHQX2 false
+setDontUse SMDFFHQX4 false
+setDontUse SMDFFHQX8 false
+setDontUse TBUFX1 false
+setDontUse TBUFX12 false
+setDontUse TBUFX16 false
+setDontUse TBUFX2 false
+setDontUse TBUFX20 false
+setDontUse TBUFX3 false
+setDontUse TBUFX4 false
+setDontUse TBUFX6 false
+setDontUse TBUFX8 false
+setDontUse TBUFXL false
+setDontUse TIEHI false
+setDontUse TIELO false
+setDontUse TLATNCAX12 false
+setDontUse TLATNCAX16 false
+setDontUse TLATNCAX2 false
+setDontUse TLATNCAX20 false
+setDontUse TLATNCAX3 false
+setDontUse TLATNCAX4 false
+setDontUse TLATNCAX6 false
+setDontUse TLATNCAX8 false
+setDontUse TLATNSRX1 false
+setDontUse TLATNSRX2 false
+setDontUse TLATNSRX4 false
+setDontUse TLATNSRXL false
+setDontUse TLATNTSCAX12 false
+setDontUse TLATNTSCAX16 false
+setDontUse TLATNTSCAX2 false
+setDontUse TLATNTSCAX20 false
+setDontUse TLATNTSCAX3 false
+setDontUse TLATNTSCAX4 false
+setDontUse TLATNTSCAX6 false
+setDontUse TLATNTSCAX8 false
+setDontUse TLATNX1 false
+setDontUse TLATNX2 false
+setDontUse TLATNX4 false
+setDontUse TLATNXL false
+setDontUse TLATSRX1 false
+setDontUse TLATSRX2 false
+setDontUse TLATSRX4 false
+setDontUse TLATSRXL false
+setDontUse TLATX1 false
+setDontUse TLATX2 false
+setDontUse TLATX4 false
+setDontUse TLATXL false
+setDontUse XNOR2X1 false
+setDontUse XNOR2X2 false
+setDontUse XNOR2X4 false
+setDontUse XNOR2XL false
+setDontUse XNOR3X1 false
+setDontUse XNOR3XL false
+setDontUse XOR2X1 false
+setDontUse XOR2X2 false
+setDontUse XOR2X4 false
+setDontUse XOR2XL false
+setDontUse XOR3X1 false
+setDontUse XOR3XL false
+setIlmMode -highFanoutPort true -loopBack false 
+catch { setHierMode -disableArt false }
+catch { setHierMode -reportPostRouteArtTiming false }
+catch { setHierMode -trialRouteHonorReadOnly false }
